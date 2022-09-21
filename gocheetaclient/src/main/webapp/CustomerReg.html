@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<!--
+Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
+Click nbfs://nbhost/SystemFileSystem/Templates/JSP_Servlet/Html.html to edit this template
+-->
+<html>
+    <head>
+        <title>TODO supply a title</title>
+        <link rel="stylesheet" type="text/css" href="css/style.css">
+        <link href="https://fonts.googleapis.com/css?family=Poppins:600&display=swap" rel="stylesheet">
+        <script src="https://kit.fontawesome.com/a81368914c.js"></script>
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+        <script>
+            const url = "http://localhost:8080/ok/customer/";
+            function getCustomer() {
+                let id = document.getElementById("txtID").value;
+                const options = {
+                    method: "GET"
+                };
+                fetch(url + id, options)
+                        .then(res => res.json())
+                        .then(data => {
+                            if (data !== null) {
+                                document.getElementById("txtName").value = data.name;
+                                document.getElementById("txtEmail").value = data.email;
+                                document.getElementById("txtContact").value = data.contact;
+                                document.getElementById("txtUsername").value = data.username;
+                                document.getElementById("txtPassword").value = data.password;
+                                document.getElementById("txtCpass").value = data.conpass;
+                            } else {
+                                alert("Not found");
+                            }
+
+                        });
+            }
+
+            function addCustomer() {
+
+                const person = {
+
+                    "name": document.getElementById("txtName").value,
+                    "email": document.getElementById("txtEmail").value,
+                    "contact": document.getElementById("txtContact").value,
+                    "username": document.getElementById("txtUsername").value,
+                    "password": document.getElementById("txtPassword").value,
+                    "conpass": document.getElementById("txtCpass").value
+                };
+                const options = {
+                    method: "POST",
+                    headers: {
+                        "content-type": "application/json"
+                    },
+                    body: JSON.stringify(person)
+                };
+
+                fetch(url, options);
+            }
+
+
+
+        </script>
+
+    </style>
+</head>
+<body>
+
+
+
+
+
+<body>
+    <img class="wave" src="img/wave.png">
+    <div class="container">
+        <div class="img">
+     <img src="img/123.jpg">
+        </div>
+        <div class="login-content">
+            <form action="login.html">
+                <img src="img/avatar.svg">
+                <h2 class="">Register Form</h2>
+                <div class="input-div one">
+                    <div class="i">
+
+                    </div>
+                    <div class="div">
+
+
+                        <input type="text" class="input"id="txtName"placeholder="Name"> 
+                    </div>
+                </div><div class="input-div one">
+                    <div class="i">
+
+                    </div>
+                    <div class="div">
+
+                        <input type="email" class="input"id="txtEmail"placeholder="Email"required="required" >
+                    </div>
+                </div><div class="input-div one">
+                    <div class="i">
+
+                    </div>
+                    <div class="div">
+
+                        <input type="text" class="input"id="txtContact"placeholder="Contact No"required="required" >
+                    </div>
+                </div><div class="input-div one">
+                    <div class="i">
+
+                    </div>
+                    <div class="div">
+
+                        <input type="text" class="input"id="txtUsername" placeholder="Username" required>
+                    </div>
+                </div><div class="input-div one">
+                    <div class="i">
+
+                    </div>
+                    <div class="div">
+
+                        <input type="password" class="input"id="txtPassword" placeholder="Password"required="required" >
+                    </div>
+                </div>       
+
+                <div class="input-div pass">
+                    <div class="i"> 
+
+                    </div>
+                    <div class="div">
+
+                        <input type="password" class="input"id="txtCpass" placeholder="Confirm Password"required="required" >
+                    </div>
+
+                </div>
+
+
+                <input id='btnAddCustomer' onclick='addCustomer()'type="submit" class="btn" value="Login"/>
+
+        </div>
+    </div>
+
+
+</div>
+</form>	
+<script type="text/javascript" src="js/main.js"></script>
+<script type="text/javascript">
+
+</script>
+
+</body>
+</html>

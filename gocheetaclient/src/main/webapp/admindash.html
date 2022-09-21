@@ -1,0 +1,569 @@
+<!DOCTYPE html>
+<!--
+Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
+Click nbfs://nbhost/SystemFileSystem/Templates/JSP_Servlet/Html.html to edit this template
+-->
+<!DOCTYPE html>
+<!--=== Coding by CodingLab | www.codinglabweb.com === -->
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+        <!----======== CSS ======== -->
+        <link rel="stylesheet" href="dashcss.css">
+
+        <!----===== Iconscout CSS ===== -->
+        <link rel="stylesheet" href="https://unicons.iconscout.com/release/v4.0.0/css/line.css">
+
+        <!--<title>Admin Dashboard Panel</title>--> 
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@48,400,0,0" />
+        <style>/* Set a style for all buttons */
+            button{
+                border:none;
+                
+                
+
+            }
+
+            button:hover {
+                opacity: 0.8;
+                color: #38d39f;
+                border:none;
+            }
+
+            /* Extra styles for the cancel button */
+            .cancelbtn {
+                width: auto;
+                padding: 10px 18px;
+                border:1px;
+
+            }
+
+            /* Center the image and position the close button */
+
+
+
+            .container {
+                padding: 16px;
+                width: 500px;
+
+            }
+
+            span.psw {
+                float: right;
+                padding-top: 16px;
+            }
+
+            /* The Modal (background) */
+            .modal {
+                display: none; /* Hidden by default */
+                position: fixed; /* Stay in place */
+                z-index: 1; /* Sit on top */
+                left: 0;
+                top: 0;
+                width: 100%; /* Full width */
+                height: 100%; /* Full height */
+                overflow: auto; /* Enable scroll if needed */
+                background-color: rgb(0,0,0); /* Fallback color */
+                background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
+                padding-top: 60px;
+            }
+
+            /* Modal Content/Box */
+            .modal-content {
+                background-color:white;
+                margin: 5% auto 15% auto; /* 5% from the top, 15% from the bottom and centered */
+                border: 1px solid #888;
+                width: 80%; /* Could be more or less, depending on screen size */
+                opacity: 0.9;
+                width: 500px;
+
+
+            }
+
+            /* The Close Button (x) */
+            .close {
+                position:absolute;
+                right: 25px;
+                top: 0;
+                color: #FEFEFE;
+                font-size: 35px;
+                font-weight: bold;
+            }
+
+            .close:hover,
+            .close:focus {
+                color: red;
+                cursor: pointer;
+            }
+
+            /* Add Zoom Animation */
+            .animate {
+                -webkit-animation: animatezoom 0.6s;
+                animation: animatezoom 0.6s
+            }
+
+            @-webkit-keyframes animatezoom {
+                from {
+                    -webkit-transform: scale(0)
+                }
+                to {
+                    -webkit-transform: scale(1)
+                }
+            }
+
+            @keyframes animatezoom {
+                from {
+                    transform: scale(0)
+                }
+                to {
+                    transform: scale(1)
+                }
+            }
+
+            /* Change styles for span and cancel button on extra small screens */
+            @media screen and (max-width: 300px) {
+                span.psw {
+                    display: block;
+                    float: none;
+                }
+                .cancelbtn {
+                    width: 100%;
+                }
+            }
+            label{
+
+                color: aliceblue;
+            }
+            .container1{
+                max-width: 1200px;
+                width: 100%;
+                background-color: #fff;
+                padding: 25px 30px;
+                border-radius: 5px;
+                box-shadow: 0 5px 10px rgba(0,0,0,0.15);
+                margin-left:200px;
+                height: 660px;
+
+
+
+            }
+            .container1 .title{
+                font-size: 25px;
+                font-weight: 500;
+                position: relative;
+
+            }
+            .container1 .title::before{
+                content: "";
+                position: absolute;
+                left: 0;
+                bottom: 0;
+                height: 3px;
+                width: 30px;
+                border-radius: 5px;
+                background: linear-gradient(135deg, #71b7e6, #9b59b6);
+            }
+            .content1 form .user-details{
+                display: flex;
+                flex-wrap: wrap;
+                justify-content: space-between;
+                margin: 20px 0 12px 0;
+                margin-bottom: 100px;
+
+            }
+            form{
+                margin-left:70px;
+                margin-top: 30px;
+                height: 500px;
+                width: 500px;
+            }
+            form .user-details .input-box1{
+                margin-bottom: 15px;
+                width: calc(100% / 2 - 20px);
+            }
+            form .input-box1 span.details{
+                display: block;
+                font-weight: 500;
+                margin-bottom: 5px;
+            }
+            .user-details1 .input-box input{
+                height: 45px;
+                width: 100%;
+                outline: none;
+                font-size: 16px;
+                border-radius: 5px;
+                padding-left: 15px;
+                border: 1px solid #ccc;
+                border-bottom-width: 2px;
+                transition: all 0.3s ease;
+            }
+            .user-details1 .input-box1 input:focus,
+            .user-details1 .input-box1 input:valid{
+                border-color: #9b59b6;
+            }
+            form .gender-details1 .gender-title1{
+                font-size: 20px;
+                font-weight: 500;
+            }
+            form .category1{
+                display: flex;
+                width: 80%;
+                margin: 14px 0 ;
+                justify-content: space-between;
+            }
+            form .category1 label{
+                display: flex;
+                align-items: center;
+                cursor: pointer;
+            }
+            form .category label .dot{
+                height: 18px;
+                width: 18px;
+                border-radius: 50%;
+                margin-right: 10px;
+                background: #d9d9d9;
+                border: 5px solid transparent;
+                transition: all 0.3s ease;
+            }
+            #dot-1:checked ~ .category1 label .one,
+            #dot-2:checked ~ .category label .two,
+            #dot-3:checked ~ .category1 label .three{
+                background: #9b59b6;
+                border-color: #d9d9d9;
+            }
+
+            .button{
+                height: 50px;
+                width: 200px;
+                display:inline-flex;
+            color: #66CDAA;
+                
+            }
+
+            form .button input{
+                height: 100%;
+                width: 100%;
+                border-radius: 5px;
+                border: none;
+                color: #fff;
+                font-size: 18px;
+                font-weight: 500;
+                letter-spacing: 1px;
+                cursor: pointer;
+                transition: all 0.3s ease;
+                background: linear-gradient(135deg,#00FA9A,#66CDAA);
+
+            }
+            .new{
+                display: flex;
+            }
+            form .button input:hover{
+                /* transform: scale(0.99); */
+                background: linear-gradient(-135deg,#00FA9A,#66CDAA);
+            }
+            @media(max-width: 584px){
+                .container{
+                    max-width: 100%;
+                }
+                form .user-details .input-box{
+                    margin-bottom: 15px;
+                    width: 100%;
+                }
+                form .category{
+                    width: 100%;
+                }
+                .content form .user-details{
+                    max-height: 300px;
+                    overflow-y: scroll;
+                }
+                .user-details::-webkit-scrollbar{
+                    width: 5px;
+                }
+            }
+            @media(max-width: 459px){
+                .container .content .category{
+                    flex-direction: column;
+                }
+                .img{
+
+                }
+            }
+            .boxes.button{
+                 color: #00FA9A;
+            }
+        </style>
+    </head>
+    <body>
+        <nav>
+            <div class="logo-name">
+                <div class="logo-image">
+
+                </div>
+
+                <span class="logo_name">GoCheeta</span>
+            </div>
+
+            <div class="menu-items">
+
+
+                <ul class="logout-mode">
+                    <li><a href="#">
+                            <i class="uil uil-signout"></i>
+                            <span class="link-name">Logout</span>
+                        </a></li>
+
+                    <li class="mode">
+                        <a href="#">
+                            <i class="uil uil-moon"></i>
+                            <span class="link-name">Dark Mode</span>
+                        </a>
+
+                        <div class="mode-toggle">
+                            <span class="switch"></span>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+        </nav>
+
+        <section class="dashboard">
+            <div class="top">
+                <i class="uil uil-bars sidebar-toggle"></i>
+
+
+
+            </div>
+
+            <div class="dash-content">
+                <div class="overview">
+                    <div class="title">
+                        <i class="uil uil-tachometer-fast-alt"></i>
+                        <span class="text">Dashboard</span>
+                    </div>
+
+                    <div class="boxes">
+                        <button class="box box2 "onclick="document.getElementById('id01').style.display = 'block '">
+                            <span class="material-symbols-outlined">
+                                local_taxi
+                            </span>
+
+                            <span class="number">Manage Vehicles</span>
+                        </button>
+                        <button class="box box2"onclick="document.getElementById('id02').style.display = 'block'">
+                            <span class="material-symbols-outlined">
+                                manage_accounts
+                            </span>
+
+                            <span class="number">Manage Driver</span>
+                        </button>
+                        <button class="box box2">
+                            <span class="material-symbols-outlined">
+                                history
+                            </span>
+                            <span class="text"></span>
+                            <span class="number">View Bookings</span>
+                        </button>
+                    </div>
+                </div>
+                <script> const linkItems = document.querySelectorAll(".link-item");
+
+                    linkItems.forEach((linkItem, index) => {
+                        linkItem.addEventListener("click", () => {
+                            document.querySelector(".active").classList.remove("active");
+                            linkItem.classList.add("active");
+
+                            const indicator = document.querySelector(".indicator");
+
+                            indicator.style.left = `${index * 95 + 48}px`;
+                        })
+                    })
+                </script>   
+
+                <div id="id02" class="modal">
+
+
+                    <div class="container1">
+                        <div class="title">Manage driver</div>
+                        <div class="content1">
+                            <form action="#">
+                                <div class="user-details">
+                                    <div class="input-box1">
+                                        <span class="details">Name</span>
+                                        <input type="text" placeholder="Enter Name" required>
+                                    </div>
+                                    <div class="input-box1">
+                                        <span class="details">Contact</span>
+                                        <input type="text" placeholder="Enter Contact" required>
+                                    </div>
+                                      <div class="input-box1">
+                                        <span class="details">Vehicle</span>
+                                        <input type="text" placeholder="Enter Vehicle" required>
+                                    </div>
+                                      <div class="input-box1">
+                                        <span class="details">User Name</span>
+                                        <input type="text" placeholder="Enter User Name" required>
+                                    </div>
+                                      <div class="input-box1">
+                                        <span class="details">Password</span>
+                                        <input type="text" placeholder="Enter Password" required>
+                                    </div>
+                                    
+                                    <br>   <br>   <br>   <br>
+                                <div class="button">
+                                    <input type="submit" value="Add Driver -->">
+                                </div>
+                                <div class="button">
+                                    <input type="submit" value="Update Driver -->">
+                                </div><br><br>
+                                <div class="img">
+                                    <img src="img/123.jpg"style="width:500px;height:400px;margin-top: -1300px;margin-left: 500px;">
+                                </div>
+
+                                <div class="button">
+                                    <input type="submit" value="Delete Driver -->"><br><br><br><br><br><br>
+
+                                    <br><br><br>
+
+                                </div><br><br><br><br><br>
+
+                                <button type="button" onclick="document.getElementById('id02').style.display = 'none'" class="cancelbtn">Cancel</button> 
+                            </form>
+
+                        </div>
+                    </div>
+   </div>  </div>  </div>
+                 
+                        <script src="script.js"></script>
+ <div id="id01" class="modal">
+
+
+                    <div class="container1">
+                        <div class="title">Manage Vehical</div>
+                        <div class="content1">
+                            <form action="#">
+                                <div class="user-details">
+                                    <div class="input-box1">
+                                        <span class="details">Name</span>
+                                        <input type="text" placeholder="Enter Name" required>
+                                    </div>
+                                    <div class="input-box1">
+                                        <span class="details">Number</span>
+                                        <input type="text" placeholder="Enter Number" required>
+                                    </div>
+                                    <div class="input-box1">
+                                        <span class="details">Vehicle Type</span>
+                                        <select name="cars" id="cars"required>
+                                            <option value="volvo">Select Type</option>
+                                            <option value="saab">Tuktuk</option>
+                                            <option value="opel">Car</option>
+                                            <option value="audi">Van</option>
+                                            <option value="audi">Bus</option>
+                                        </select>
+                                    </div>
+                                    <div class="input-box1">
+                                        <span class="details">People</span>
+                                        <input type="text" placeholder="People" required>
+                                    </div>
+                                </div >
+                                <div class="button">
+                                    <input type="submit" value="Add Vehicle -->">
+                                </div>
+                                <div class="button">
+                                    <input type="submit" value="Update Vehicle -->">
+                                </div><br><br>
+                                <div class="img">
+                                    <img src="img/123.jpg"style="width:500px;height:400px;margin-top: -1300px;margin-left: 500px;">
+                                </div>
+
+                                <div class="button">
+                                    <input type="submit" value="Delete Vehicle -->"><br><br><br><br><br><br>
+
+                                    <br><br><br>
+
+                                </div><br><br><br><br><br>
+
+                                <button type="button" onclick="document.getElementById('id01').style.display = 'none'" class="cancelbtn">Cancel</button> 
+                            </form>
+
+                        </div>
+                    </div>
+   
+   </div>     </div>     </div>  
+                        
+                       
+     <div class="dash-content">
+            <div class="overview">
+              
+
+                
+            </div>
+
+            <div class="activity">
+                <div class="title">
+                    <i class="uil uil-clock-three"></i>
+                    <span class="text">Recent Activity</span>
+                </div>
+
+                <div class="activity-data">
+                    <div class="data names">
+                        <span class="data-title">Name</span>
+                        <span class="data-list">Prem Shahi</span>
+                        <span class="data-list">Deepa Chand</span>
+                        <span class="data-list">Manisha Chand</span>
+                        <span class="data-list">Pratima Shahi</span>
+                        <span class="data-list">Man Shahi</span>
+                        <span class="data-list">Ganesh Chand</span>
+                        <span class="data-list">Bikash Chand</span>
+                    </div>
+                    <div class="data email">
+                        <span class="data-title">Email</span>
+                        <span class="data-list">premshahi@gmail.com</span>
+                        <span class="data-list">deepachand@gmail.com</span>
+                        <span class="data-list">prakashhai@gmail.com</span>
+                        <span class="data-list">manishachand@gmail.com</span>
+                        <span class="data-list">pratimashhai@gmail.com</span>
+                        <span class="data-list">manshahi@gmail.com</span>
+                        <span class="data-list">ganeshchand@gmail.com</span>
+                    </div>
+                    <div class="data joined">
+                        <span class="data-title">Joined</span>
+                        <span class="data-list">2022-02-12</span>
+                        <span class="data-list">2022-02-12</span>
+                        <span class="data-list">2022-02-13</span>
+                        <span class="data-list">2022-02-13</span>
+                        <span class="data-list">2022-02-14</span>
+                        <span class="data-list">2022-02-14</span>
+                        <span class="data-list">2022-02-15</span>
+                    </div>
+                    <div class="data type">
+                        <span class="data-title">Type</span>
+                        <span class="data-list">New</span>
+                        <span class="data-list">Member</span>
+                        <span class="data-list">Member</span>
+                        <span class="data-list">New</span>
+                        <span class="data-list">Member</span>
+                        <span class="data-list">New</span>
+                        <span class="data-list">Member</span>
+                    </div>
+                    <div class="data status">
+                        <span class="data-title">Booking</span>
+                        <span class="data-list">1</span>
+                        <span class="data-list">3</span>
+                        <span class="data-list">5</span>
+                        <span class="data-list">9</span>
+                        <span class="data-list">6</span>
+                        <span class="data-list">7</span>
+                        <span class="data-list">3</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+                        </body>
+
+
+                        </html>

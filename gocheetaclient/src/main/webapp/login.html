@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<!--
+Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
+Click nbfs://nbhost/SystemFileSystem/Templates/JSP_Servlet/Html.html to edit this template
+-->
+<html>
+    <head>
+          <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+        <title>JSP Page</title>
+        <link rel="stylesheet" type="text/css" href="css/style.css">
+        <link href="https://fonts.googleapis.com/css?family=Poppins:600&display=swap" rel="stylesheet">
+        <script src="https://kit.fontawesome.com/a81368914c.js"></script>
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <title>TODO supply a title</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <script>
+             const url = "http://localhost:8080/ok/customer/";
+    
+            function getCustomer() {
+	var username = document.getElementById('username').value
+	var password = document.getElementById('password').value
+
+	for(var i = 0; i < objPeople.length; i++) {
+		// check is user input matches username and password of a current index of the objPeople array
+		if(username == objPeople[i].username && password == objPeople[i].password) {
+			console.log(username + " is logged in!!!")
+			// stop the function if this is found to be true
+			return
+		}
+	}
+	console.log("incorrect username or password")
+}</script>
+    </head>
+      <body>
+        <img class="wave" src="img/wave.png">
+        <div class="container">
+            <div class="img">
+                <img src="img/Taxi.jpg">
+
+            </div>
+            <div class="login-content">
+                <form >
+                    <img src="img/avatar.svg">
+                    <h2 class="">Welcome</h2>
+                    <h2 class="title">To GoCheeta</h2>
+                    <div class="input-div one">
+                        <div class="i">
+                            <i class="fas fa-user"></i>
+                        </div>
+                        <div class="div">
+
+                            <input type="text" class="input"placeholder="Username"id="username">
+                        </div>
+                    </div>
+                    <div class="input-div pass">
+                        <div class="i"> 
+                            <i class="fas fa-lock"></i>
+                        </div>
+                        <div class="div">
+
+                            <input type="password" class="input"placeholder="Password"id="Password">
+                            
+                        </div>
+                    </div>
+                    <a href="CustomerReg.html">New User ? </a>
+                    <input type="submit" class="btn" value="Login"id='btnAddCustomer' onclick='addCustomer()'>
+                </form>
+            </div>
+        </div>
+        <script type="text/javascript" src="js/main.js"></script>
+   
+    </body>
+</html>
